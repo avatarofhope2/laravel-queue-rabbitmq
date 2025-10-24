@@ -70,7 +70,7 @@ class RabbitMQJob extends Job implements JobContract
     /**
      * {@inheritdoc}
      */
-    public function attempts(): int
+    public function attempts()
     {
         if (! $data = $this->getRabbitMQMessageHeaders()) {
             return 1;
@@ -99,7 +99,7 @@ class RabbitMQJob extends Job implements JobContract
      *
      * @throws BindingResolutionException
      */
-    public function delete(): void
+    public function delete()
     {
         parent::delete();
 
@@ -122,7 +122,7 @@ class RabbitMQJob extends Job implements JobContract
      *
      * @throws AMQPProtocolChannelException
      */
-    public function release($delay = 0): void
+    public function release($delay = 0)
     {
         parent::release();
 
